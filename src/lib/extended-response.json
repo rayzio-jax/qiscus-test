@@ -28,39 +28,70 @@
           "id": 885512,
           "type": "text",
           "message": "Selamat malam",
+          "attachments": {},
           "sender": "customer@mail.com"
         },
         {
           "id": 885513,
           "type": "text",
           "message": "Malam",
+          "attachments": {},
           "sender": "agent@mail.com"
         },
         {
           "id": 885514,
           "type": "text",
           "message": "Ada yang bisa saya bantu?",
+          "attachments": {},
           "sender": "agent@mail.com"
         },
         {
           "id": 885515,
           "type": "text",
           "message": "Saya ingin mengirimkan bukti pembayaran, karena diaplikasi selalu gagal",
+          "attachments": {},
           "sender": "customer@mail.com"
         },
         {
           "id": 885516,
           "type": "text",
           "message": "Baik, silahkan kirimkan lampiran bukti pembayarannya",
+          "attachments": {},
           "sender": "agent@mail.com"
         },
         {
           "id": 885517,
+          "type": "text",
+          "message": "Berikut saya lampirkan bukti nya",
+          "attachments": {},
+          "sender": "customer@mail.com"
+        },
+        {
+          "id": 885518,
           "type": "file",
-          "attachments": [
-            { "type":"image", "file_name": "Gambar Pembayaran", "file": "https://picsum.photos/seed/fancy/500" },
-            { "type": "document", "file_name": "PDF Pembayaran", "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" }
-          ],
+          "message": "",
+          "attachments": { "type":"image", "file_name": "Gambar Pembayaran", "file": "https://picsum.photos/seed/fancy/500" },
+          "sender": "customer@mail.com"
+        },
+        {
+          "id": 885519,
+          "type": "file",
+          "message": "",
+          "attachments": { "type": "document", "file_name": "PDF Pembayaran.pdf", "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" },
+          "sender": "customer@mail.com"
+        },
+        {
+          "id": 885520,
+          "type": "text",
+          "message": "Mohon ditunggu sebentar ya untuk kami cek",
+          "attachments": {},
+          "sender": "agent@mail.com"
+        },
+        {
+          "id": 885521,
+          "type": "text",
+          "message": "Iya kak",
+          "attachments": {},
           "sender": "customer@mail.com"
         }
       ]
