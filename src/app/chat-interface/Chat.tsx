@@ -9,33 +9,16 @@ import ChatMenu from "./components/ChatMenu";
 
 const inter = Inter({ weight: ["400", "600", "700"], subsets: ["latin"] });
 
-const DATA_URL = "https://gist.githubusercontent.com/asharijuang/23745f3132fa30e666db68d2bf574e4a/raw/5d556dbb9c2aea9fdf3e1ec96e45f62a88cea7b6/chat_response.json";
 const PRODUCT_IMAGE = "https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
 type ChatData = Record<string, string[] | string | ChatData[]>;
+interface ChatProps {
+    data: ChatData;
+}
 
-export default function Chat() {
+export default function Chat({ data }: ChatProps) {
     const [loading, setLoading] = useState<boolean>(true);
-    const [data, setData] = useState<ChatData | null>(null);
     const [isMobile, setIsMobile] = useState<boolean>(false);
-
-    useEffect(() => {
-        async function getData() {
-            try {
-                const response = await fetch(DATA_URL);
-                const json = await response.json();
-                const results = json.results[0];
-
-                setData(results);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        getData();
-    }, []);
 
     useEffect(() => {
         function viewportWidthChange() {
@@ -50,6 +33,7 @@ export default function Chat() {
 
         viewportWidthChange();
         window.addEventListener("resize", viewportWidthChange);
+        setLoading(false);
         return () => window.removeEventListener("resize", viewportWidthChange);
     }, []);
 
