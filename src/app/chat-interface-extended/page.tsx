@@ -1,6 +1,11 @@
 import React from "react";
 import Chat from "./Chat";
 import { promises as fs } from "fs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Chat Interface 2",
+};
 
 export default async function ChatExtendedPage() {
     // Read JSON from local
