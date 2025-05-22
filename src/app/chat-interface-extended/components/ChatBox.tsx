@@ -1,7 +1,6 @@
-import { DownloadIcon, Loader2Icon, PaperclipIcon, SendIcon } from "lucide-react";
+import { DownloadIcon, PaperclipIcon, SendIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 interface ChatBoxProps {
     comments: Array<{ [key: string]: string }>;

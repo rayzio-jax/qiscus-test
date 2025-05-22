@@ -49,7 +49,7 @@ export default function Chat({ data }: ChatProps) {
                 <ChatMenu>{!isMobile && <ChatList image={data?.room?.image_url || PRODUCT_IMAGE} name={data?.room?.name || "Chat Room"} />}</ChatMenu>
                 <div id="chat-ui" className="max-w-[1200px] w-full bg-[#F8F8F8] overflow-hidden flex flex-col">
                     <ChatDetails image={data?.room?.image_url || PRODUCT_IMAGE} name={data?.room?.name || "Chat Room"} participants={(data?.room?.participant as any) || []} />
-                    <ChatBox comments={(data?.comments as any) || []} />
+                    <ChatBox comments={(data?.comments as unknown) || []} />
                 </div>
             </div>
         );
