@@ -24,9 +24,9 @@ export default function ChatBox({ comments }: ChatBoxProps) {
 
     return (
         <div id="chat-box" className="flex flex-col relative grow">
-            <div className="flex-1 overflow-y-auto pt-2 max-h-[78vh]">
+            <ul className="flex-1 overflow-y-auto pt-2 max-h-[78vh]">
                 {comments.map((v, i) => (
-                    <div key={i} className={`${v.sender === "agent@mail.com" ? "justify-end" : "justify-start"} flex px-2 mb-2 w-full`}>
+                    <li key={i} className={`${v.sender === "agent@mail.com" ? "justify-end" : "justify-start"} flex px-2 mb-2 w-full`}>
                         <div className="flex flex-col">
                             <div
                                 className={`${
@@ -39,9 +39,9 @@ export default function ChatBox({ comments }: ChatBoxProps) {
                                 {getRandomTimestamp("2025-05-22T08:00:00", "2025-05-22T18:00:00")}
                             </span>
                         </div>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
             <form onSubmit={(e) => e.preventDefault()} className="h-[85px] border-gray-700 border-t flex w-full absolute bottom-0">
                 <div className="w-full">
                     <textarea
