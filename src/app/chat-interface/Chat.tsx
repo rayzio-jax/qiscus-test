@@ -53,12 +53,6 @@ export default function Chat() {
         return () => window.removeEventListener("resize", viewportWidthChange);
     }, []);
 
-    useEffect(() => {
-        if (!loading && data) {
-            console.log(data);
-        }
-    }, [loading]);
-
     if (loading) {
         return (
             <div className={`${inter.className} min-h-screen w-full flex justify-center items-center`}>
