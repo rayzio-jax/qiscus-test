@@ -46,9 +46,13 @@ export default function Chat({ data }: ChatProps) {
     } else {
         return (
             <div className={`${inter.className} flex`}>
-                <ChatMenu>{!isMobile && <ChatList image={data?.room?.image_url || PRODUCT_IMAGE} name={data?.room?.name || "Chat Room"} />}</ChatMenu>
+                <ChatMenu>{!isMobile && <ChatList image={(data?.room?.image_url as unknown) || PRODUCT_IMAGE} name={(data?.room?.name as unknown) || "Chat Room"} />}</ChatMenu>
                 <div id="chat-ui" className="max-w-[1200px] w-full bg-[#F8F8F8] overflow-hidden flex flex-col">
-                    <ChatDetails image={data?.room?.image_url || PRODUCT_IMAGE} name={data?.room?.name || "Chat Room"} participants={(data?.room?.participant as unknown) || []} />
+                    <ChatDetails
+                        image={(data?.room?.image_url as unknown) || PRODUCT_IMAGE}
+                        name={(data?.room?.name as unknown) || "Chat Room"}
+                        participants={(data?.room?.participant as unknown) || []}
+                    />
                     <ChatBox comments={(data?.comments as unknown) || []} />
                 </div>
             </div>
