@@ -53,6 +53,15 @@
           "type": "text",
           "message": "Baik, silahkan kirimkan lampiran bukti pembayarannya",
           "sender": "agent@mail.com"
+        },
+        {
+          "id": 885517,
+          "type": "file",
+          "attachments": [
+            { "type":"image", "file_name": "Gambar Pembayaran", "file": "https://picsum.photos/seed/fancy/500" },
+            { "type": "document", "file_name": "PDF Pembayaran", "file": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" }
+          ],
+          "sender": "customer@mail.com"
         }
       ]
     }
