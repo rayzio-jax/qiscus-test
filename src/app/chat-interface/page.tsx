@@ -7,5 +7,5 @@ export default async function ChatPage() {
     const res = await fetch(DATA_URL);
     const data = await res.json();
 
-    return <Chat data={data} />;
+    return <Chat data={data.results[0]} />;
 }
