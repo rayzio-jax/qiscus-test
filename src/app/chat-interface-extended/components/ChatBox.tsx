@@ -1,4 +1,6 @@
-import { PaperclipIcon, SendIcon } from "lucide-react";
+import { DownloadIcon, Loader2Icon, PaperclipIcon, SendIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface ChatBoxProps {
@@ -24,24 +26,36 @@ export default function ChatBox({ comments }: ChatBoxProps) {
 
     return (
         <div id="chat-box" className="flex flex-col relative grow">
-            <div className="flex-1 overflow-y-auto pt-2 max-h-[78vh]">
+            <ul className="flex-1 overflow-y-auto pt-2 max-h-[78vh]">
                 {comments.map((v, i) => (
-                    <div key={i} className={`${v.sender === "agent@mail.com" ? "justify-end" : "justify-start"} flex px-2 mb-2 w-full`}>
+                    <li key={i} className={`${v.sender === "agent@mail.com" ? "justify-end" : "justify-start"} flex px-2 mb-2 w-full`}>
                         <div className="flex flex-col">
                             <div
-                                className={`${
-                                    v.sender === "agent@mail.com" ? "bg-purple-300 text-gray-800" : "bg-gray-800 text-white"
-                                } w-full p-2 rounded-xl text-sm max-w-[250px] text-pretty break-words overflow-hidden`}
+                                className={`${v.sender === "agent@mail.com" ? "bg-purple-300 text-gray-800" : "bg-gray-800 text-white"} ${
+                                    v.type === "text" && "p-2"
+                                } w-full rounded-xl text-sm max-w-[250px] text-pretty break-words overflow-hidden`}
                             >
-                                {v.message}
+                                {v.type === "text" ? (
+                                    v.message
+                                ) : v.type === "file" && v.attachments?.type === "image" ? (
+                                    <div className="max-w-[144px] max-h-[188px] min-w-[104px] rounded-md overflow-hidden shadow shadow-black flex justify-center items-center">
+                                        <Image className="object-cover w-full h-full" src={v.attachments?.file || null} width={100} height={100} alt={v.attachments?.file_name} />
+                                    </div>
+                                ) : v.type === "file" && v.attachments?.type === "document" ? (
+                                    <Link className="text-xs inline-flex p-2 justify-center items-center gap-2" href={v.attachments?.file || null} download>
+                                        {v.attachments?.file_name} <DownloadIcon width={20} />
+                                    </Link>
+                                ) : (
+                                    ""
+                                )}
                             </div>
                             <span className={`${v.sender === "agent@mail.com" ? "justify-end" : "justify-start"} flex text-gray-800 text-[10px]`}>
                                 {getRandomTimestamp("2025-05-22T08:00:00", "2025-05-22T18:00:00")}
                             </span>
                         </div>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
             <form onSubmit={(e) => e.preventDefault()} className="h-[85px] border-gray-700 border-t flex w-full absolute bottom-0">
                 <div className="w-full">
                     <textarea
