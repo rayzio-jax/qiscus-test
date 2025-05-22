@@ -13,7 +13,7 @@ export default function ChatList({ image, name }: ChatListProps) {
             <ChatListHeader />
             <ul className="h-full bg-[#F8F8F8]">
                 <li>
-                    <button aria-current className="bg-slate-200 p-3 inline-flex w-full space-x-2 text-left">
+                    <button aria-current className="bg-slate-200 p-3 flex w-full space-x-2 text-left">
                         <div className="w-10 h-10 min-w-10 overflow-hidden rounded-full border-white border-2">
                             <Image className="object-cover w-full h-full" src={image} width={100} height={100} alt="Chat Room Thumbnail" />
                         </div>
@@ -28,7 +28,7 @@ export default function ChatList({ image, name }: ChatListProps) {
                 </li>
 
                 <li>
-                    <button className="bg-slate-50 hover:bg-slate-100 duration-150 cursor-pointer p-3 inline-flex w-full space-x-2 text-left">
+                    <button className="bg-slate-50 hover:bg-slate-100 duration-150 cursor-pointer p-3 flex w-full space-x-2 text-left">
                         <div className="w-10 h-10 min-w-10 overflow-hidden rounded-full border-white border-2">
                             <Image className="object-cover w-full h-full" src={"https://picsum.photos/seed/tiger/500"} width={100} height={100} alt="Chat Room Thumbnail" />
                         </div>
@@ -43,7 +43,7 @@ export default function ChatList({ image, name }: ChatListProps) {
                 </li>
 
                 <li>
-                    <button className="bg-slate-50 hover:bg-slate-100 duration-150 cursor-pointer p-3 inline-flex w-full space-x-2 text-left">
+                    <button className="bg-slate-50 hover:bg-slate-100 duration-150 cursor-pointer p-3 flex w-full space-x-2 text-left">
                         <div className="w-10 h-10 min-w-10 overflow-hidden rounded-full border-white border-2">
                             <Image className="object-cover w-full h-full" src={"https://picsum.photos/seed/penguin/500"} width={100} height={100} alt="Chat Room Thumbnail" />
                         </div>
