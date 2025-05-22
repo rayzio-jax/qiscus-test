@@ -6,7 +6,7 @@ export default function ChatNav() {
         <nav id="menu-nav" className="pt-5 min-h-screen bg-violet-800">
             <ul className="flex flex-col h-full w-full items-center">
                 <li aria-current className="w-full">
-                    <button className="px-2 py-3 h-fit w-full duration-150 flex justify-center relative before:absolute before:bottom-2 before:rounded-full before:w-1/3 before:h-0.5 before:bg-violet-400">
+                    <button className="cursor-pointer px-2 py-3 h-fit w-full max-md:hover:bg-violet-900 duration-150 flex justify-center relative before:absolute before:bottom-2 before:rounded-full before:w-1/3 before:h-0.5 before:bg-violet-400">
                         <MessageSquareTextIcon className="text-white w-6 h-6" />
                     </button>
                 </li>
